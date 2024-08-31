@@ -8,6 +8,12 @@
     <meta property = "og:title" content="Vikram">
     <meta>
     <!-- <title>Document</title> -->
+     <style>
+        input :focus:invalid{
+            border: 2px solid red;
+            /* background-color: red; */
+        }
+     </style>
 </head>
 <body>
     <div class="name">
@@ -17,17 +23,33 @@
     <h4>rajnish</h4>
     <h5>subash</h5>
 </div>
-     <form action="/submit-name" method="post" >
-        <label for="name">Name
-            <input type="text" required="10">
-        </label><br><br>
-        <label for="mobile"> Mobile
-            <input type="text" required>
-        </label>
-        <br><br>
-     <button type="submit" onclick="alert('submitted')"> Submit</button>
+
+     <form action="/submit-name" method="get" >
+       <div>
+        <label for="FirstName">First Name</label> <br>
+        <input type="text" id="FirstName" name="First name" required minlength="5" maxlength="12" spellcheck="false">
+       </div>
+       <div>
+        <label for="LastName">Last Name</label> <br>
+        <input type="text" id="LastName" name="Last name" required>
+       </div>
+       <div>
+        <label for="FirstName">Mobile Number</label> <br>
+        <input type="text" id="FirstName" name="First name" required>
+       </div>
+       <div>
+        <label for="FirstName">Address</label> <br>
+        <input type="text" id="FirstName" name="First name">
+       </div>
+       <div>
+        <button type="submit">submit</button>
+     <!-- <button type="submit" onclick="alert('submitted')"> Submit</button> -->
      </form>
-               
+     <video loop width="440px" height="320px" controls >
+        <source src="c:\Users\Vikram Kumar\Pictures\Camera Roll 1\VID_82890401_231342_570.mp4">
+     </video>
+
+     
 </div>
 </body>
 </html>
