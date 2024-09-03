@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SR University Placement Cell</title>
+  <style>
+    .container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 5px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="tel"],
+input[type="email"],
+textarea,
+select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>SR University Placement Cell - Student Information Form</h1>
+    <form id="studentForm">
+      <div class="form-group">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+      </div>
+      <div class="form-group">
+        <label for="branch">Branch:</label>
+        <input type="text" id="branch" name="branch" required>
+      </div>
+      <div class="form-group">
+        <label for="year">Year:</label>
+        <input type="text" id="year" name="year" required>
+      </div>
+      <div class="form-group">
+        <label for="semester">Semester:</label>
+        <input type="text" id="semester" name="semester" required>
+      </div>
+      <div class="form-group">
+        <label for="fatherName">Father's Name:</label>
+        <input type="text" id="fatherName" name="fatherName" required>
+      </div>
+      <div class="form-group">
+        <label for="motherName">Mother's Name:</label>
+        <input type="text" id="motherName" name="motherName" required>
+      </div>
+      <div class="form-group">
+        <label for="gender">Gender:</label>
+        <select id="gender" name="gender" required>
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+          <option value="other">Other</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="dob">Date of Birth:</label>
+        <input type="date" id="dob" name="dob" required>
+      </div>
+      <div class="form-group">
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="age" required>
+      </div>
+      <div class="form-group">
+        <label for="mobile">Mobile:</label>
+        <input type="tel" id="mobile" name="mobile" required>
+      </div>
+      <div class="form-group">
+        <label for="email">Email ID:</label>
+        <input type="email" id="email" name="email" required>
+      </div>
+      <div class="form-group">
+        <label for="address">Address:</label>
+        <textarea id="address" name="address" required></textarea>
+      </div>
+      <div class="form-group">
+        <label for="pincode">Pincode:</label>
+        <input type="text" id="pincode" name="pincode" required>
+      </div>
+      <div class="form-group">
+        <label for="languages">Languages Known:</label>
+        <input type="text" id="languages" name="languages" required>
+      </div>
+      <div class="form-group">
+        <label for="otherDetails">If Any Other Details:</label>
+        <textarea id="otherDetails" name="otherDetails"></textarea>
+      </div>
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+
+  <script> 
+  document.getElementById('studentForm').addEventListener('submit', function(event) {
+  event.preventDefault();
+
+  // Get form data
+  const formData = new FormData(event.target);
+
+  // Create object to store form data
+  const studentInfo = {};
+  formData.forEach((value, key) => {
+    studentInfo[key] = value;
+  });
+
+  // Display form data (for demonstration purposes)
+  console.log(studentInfo);
+
+  // Here you can add code to send the form data to the server
+});
+
+</script>
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UPI Payment System</title>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      padding: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1 class="mb-4">UPI Payment System</h1>
+    <form id="paymentForm">
+      <div class="form-group">
+        <label for="senderName">Sender Name</label>
+        <input type="text" class="form-control" id="senderName" required>
+      </div>
+      <div class="form-group">
+        <label for="receiverName">Receiver Name</label>
+        <input type="text" class="form-control" id="receiverName" required>
+      </div>
+      <div class="form-group">
+        <label for="amount">Amount</label>
+        <input type="number" class="form-control" id="amount" required>
+      </div>
+      <div class="form-group">
+        <label for="upiId">UPI ID</label>
+        <input type="text" class="form-control" id="upiId" required>
+      </div>
+      <div class="form-group">
+        <label for="remarks">Remarks</label>
+        <input type="text" class="form-control" id="remarks">
+      </div>
+      <button type="button" class="btn btn-primary" onclick="initiateTransaction()">Initiate Transaction</button>
+    </form>
+   
+      <h3>Transaction Details</h3>
+      <p><strong>Sender Name:</strong> <span id="displaySenderName"></span></p>
+      <p><strong>Receiver Name:</strong> <span id="displayReceiverName"></span></p>
+      <p><strong>Amount:</strong> <span id="displayAmount"></span></p>
+      <p><strong>UPI ID:</strong> <span id="displayUPIId"></span></p>
+      <p><strong>Remarks:</strong> <span id="displayRemarks"></span></p>
+      <p><strong>Transaction Status:</strong> <span id="displayStatus"></span></p>
+    </div>
+  </div>
+
+  <script>
+    function initiateTransaction() {
+      // Mocking authentication process
+      if (confirm("Authenticate transaction?")) {
+        // Get form values
+        const senderName = document.getElementById('senderName').value;
+        const receiverName = document.getElementById('receiverName').value;
+        const amount = document.getElementById('amount').value;
+        const upiId = document.getElementById('upiId').value;
+        const remarks = document.getElementById('remarks').value || "No remarks";
+
+        // Mocking transaction status
+        const transactionStatus = Math.random() < 0.5 ? "Success" : "Failed";
+
+        // Display transaction details
+        document.getElementById('displaySenderName').innerText = senderName;
+        document.getElementById('displayReceiverName').innerText = receiverName;
+        document.getElementById('displayAmount').innerText = amount;
+        document.getElementById('displayUPIId').innerText = upiId;
+        document.getElementById('displayRemarks').innerText = remarks;
+        document.getElementById('displayStatus').innerText = transactionStatus;
+
+        // Show transaction details
+        document.getElementById('transactionDetails').style.display = "block";
+      } else {
+        alert("Transaction authentication cancelled.");
+      }
+    }
+  </script>
+</body>
+</html>
